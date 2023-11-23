@@ -6,40 +6,43 @@ main() => runApp(const PerguntaApp());
 
 class PerguntaAppState extends State<PerguntaApp> {
   var _perguntaSelecionada = 0;
+  var _pontuacaoTotal = 0;
   final _perguntas = const [
+    
     {
       'texto': 'Qual é a sua cor favorita?',
       'respostas': [
-        {'texto': 'Preto', 'nota': 10},
-        {'texto': 'Vermelho', 'nota': 5},
-        {'texto': 'Verde', 'nota': 3},
-        {'texto': 'Branco', 'nota': 1},
+        {'texto': 'Preto', 'pontuacao': 10},
+        {'texto': 'Vermelho', 'pontuacao': 5},
+        {'texto': 'Verde', 'pontuacao': 3},
+        {'texto': 'Branco', 'pontuacao': 1},
       ],
     },
     {
       'texto': 'Qual é o seu animal favorito?',
       'respostas': [
-        {'texto': 'Coelho', 'nota': 5},
-        {'texto': 'Cobra', 'nota': 3},
-        {'texto': 'Elefante', 'nota': 1},
-        {'texto': 'Leão', 'nota': 10},
+        {'texto': 'Coelho', 'pontuacao': 5},
+        {'texto': 'Cobra', 'pontuacao': 3},
+        {'texto': 'Elefante', 'pontuacao': 1},
+        {'texto': 'Leão', 'pontuacao': 10},
       ],
     },
     {
       'texto': 'Qual é o seu instrutor favorito?',
       'respostas': [
-        {'texto': 'Maria', 'nota': 10},
-        {'texto': 'João', 'nota': 10}, 
-        {'texto': 'Leo', 'nota': 10}, 
-        {'texto': 'Pedro', 'nota': 10},
+        {'texto': 'Maria', 'pontuacao': 10},
+        {'texto': 'João', 'pontuacao': 10},
+        {'texto': 'Leo', 'pontuacao': 10},
+        {'texto': 'Pedro', 'pontuacao': 10},
       ],
     }
   ];
 
-  void _responder() {
+  void _responder(int pontuacao) {
     if (temPerguntaSelecionada) {
       setState(() {
         _perguntaSelecionada++;
+        _pontuacaoTotal += pontuacao;
       });
     }
   }

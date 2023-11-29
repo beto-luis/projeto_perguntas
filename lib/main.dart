@@ -65,7 +65,7 @@ class PerguntaAppState extends State<PerguntaApp> {
           centerTitle: true,
           backgroundColor: Colors.blue,
           title: const Text('Questionário',
-          style: TextStyle(fontSize: 28),),
+          style: TextStyle(color: Colors.white, fontSize: 28),),
         ),
         body: temPerguntaSelecionada
             ? Questionario(
